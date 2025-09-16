@@ -1,0 +1,24 @@
+{
+  "Materias": [
+    {
+      "cod_materia": "001",
+      "NombreMateria": "Programación I",
+      "Cod_carrera": "TI01",
+      "NombreCarrera": "Tecnicatura en Programación",
+      "AñoDeCursada": "Primer",
+      "CantidadDeAlumnosActual": 35,
+      "PdfPrograma": "programacion1.pdf",
+      "FechaAprobacionPlan": "2023-03-15"
+    },
+    {
+      "cod_materia": "002",
+      "NombreMateria": "Redes",
+      "Cod_carrera": "TI01",
+      "NombreCarrera": "Tecnicatura en Programación",
+      "AñoDeCursada": "Segundo",
+      "CantidadDeAlumnosActual": 28,
+      "PdfPrograma": "redes.pdf",
+      "FechaAprobacionPlan": "2022-09-10"
+    }
+  ]
+}

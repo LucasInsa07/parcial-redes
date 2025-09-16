@@ -1,0 +1,18 @@
+{
+  "Carreras": [
+    {
+      "Cod_carrera": "TI01",
+      "NombreCarrera": "Tecnicatura en Programación",
+      "Duracion": "2 años",
+      "CantidadMaterias": 20,
+      "TituloOtorgado": "Técnico Universitario en Programación"
+    },
+    {
+      "Cod_carrera": "ING01",
+      "NombreCarrera": "Ingeniería en Informática",
+      "Duracion": "5 años",
+      "CantidadMaterias": 45,
+      "TituloOtorgado": "Ingeniero en Informática"
+    }
+  ]
+}
