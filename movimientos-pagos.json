@@ -1,0 +1,49 @@
+{
+  "MovimientosPago": [
+    {
+      "IdentificativoOperacion": "0001",
+      "DNI_deudor": "30111222",
+      "NombreDeldeudor": "Juan Pérez",
+      "NroCuota": 1,
+      "Importe": 15000.50,
+      "cod_medio": "01",
+      "QR_comprobantePago": "comprobante_0001.png"
+    },
+    {
+      "IdentificativoOperacion": "0002",
+      "DNI_deudor": "29444555",
+      "NombreDeldeudor": "María López",
+      "NroCuota": 2,
+      "Importe": 18000.00,
+      "cod_medio": "02",
+      "QR_comprobantePago": "comprobante_0002.png"
+    },
+    {
+      "IdentificativoOperacion": "0003",
+      "DNI_deudor": "28999111",
+      "NombreDeldeudor": "Carlos Gómez",
+      "NroCuota": 3,
+      "Importe": 12000.75,
+      "cod_medio": "04",
+      "QR_comprobantePago": "comprobante_0003.png"
+    },
+    {
+      "IdentificativoOperacion": "0004",
+      "DNI_deudor": "27666777",
+      "NombreDeldeudor": "Ana Torres",
+      "NroCuota": 1,
+      "Importe": 9500.00,
+      "cod_medio": "05",
+      "QR_comprobantePago": "comprobante_0004.png"
+    },
+    {
+      "IdentificativoOperacion": "0005",
+      "DNI_deudor": "31222333",
+      "NombreDeldeudor": "Luis Fernández",
+      "NroCuota": 2,
+      "Importe": 20000.00,
+      "cod_medio": "03",
+      "QR_comprobantePago": "comprobante_0005.png"
+    }
+  ]
+}
