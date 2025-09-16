@@ -2,23 +2,183 @@
   "Materias": [
     {
       "cod_materia": "001",
-      "NombreMateria": "Programación I",
+      "NombreMateria": "Materia 1",
       "Cod_carrera": "TI01",
-      "NombreCarrera": "Tecnicatura en Programación",
-      "AñoDeCursada": "Primer",
-      "CantidadDeAlumnosActual": 35,
-      "PdfPrograma": "programacion1.pdf",
-      "FechaAprobacionPlan": "2023-03-15"
+      "AñoDeCursada": "2°",
+      "CantidadDeAlumnosActual": 22,
+      "PdfPrograma": "materia1.pdf",
+      "FechaAprobacionPlan": "2021-02-15"
     },
     {
       "cod_materia": "002",
-      "NombreMateria": "Redes",
+      "NombreMateria": "Materia 2",
       "Cod_carrera": "TI01",
-      "NombreCarrera": "Tecnicatura en Programación",
-      "AñoDeCursada": "Segundo",
+      "AñoDeCursada": "3°",
+      "CantidadDeAlumnosActual": 24,
+      "PdfPrograma": "materia2.pdf",
+      "FechaAprobacionPlan": "2022-03-15"
+    },
+    {
+      "cod_materia": "003",
+      "NombreMateria": "Materia 3",
+      "Cod_carrera": "TI01",
+      "AñoDeCursada": "4°",
+      "CantidadDeAlumnosActual": 26,
+      "PdfPrograma": "materia3.pdf",
+      "FechaAprobacionPlan": "2023-04-15"
+    },
+    {
+      "cod_materia": "004",
+      "NombreMateria": "Materia 4",
+      "Cod_carrera": "TI01",
+      "AñoDeCursada": "5°",
       "CantidadDeAlumnosActual": 28,
-      "PdfPrograma": "redes.pdf",
-      "FechaAprobacionPlan": "2022-09-10"
+      "PdfPrograma": "materia4.pdf",
+      "FechaAprobacionPlan": "2024-05-15"
+    },
+    {
+      "cod_materia": "005",
+      "NombreMateria": "Materia 5",
+      "Cod_carrera": "TI01",
+      "AñoDeCursada": "1°",
+      "CantidadDeAlumnosActual": 30,
+      "PdfPrograma": "materia5.pdf",
+      "FechaAprobacionPlan": "2020-06-15"
+    },
+    {
+      "cod_materia": "006",
+      "NombreMateria": "Materia 6",
+      "Cod_carrera": "ING01",
+      "AñoDeCursada": "2°",
+      "CantidadDeAlumnosActual": 32,
+      "PdfPrograma": "materia6.pdf",
+      "FechaAprobacionPlan": "2021-07-15"
+    },
+    {
+      "cod_materia": "007",
+      "NombreMateria": "Materia 7",
+      "Cod_carrera": "ING01",
+      "AñoDeCursada": "3°",
+      "CantidadDeAlumnosActual": 34,
+      "PdfPrograma": "materia7.pdf",
+      "FechaAprobacionPlan": "2022-08-15"
+    },
+    {
+      "cod_materia": "008",
+      "NombreMateria": "Materia 8",
+      "Cod_carrera": "ING01",
+      "AñoDeCursada": "4°",
+      "CantidadDeAlumnosActual": 36,
+      "PdfPrograma": "materia8.pdf",
+      "FechaAprobacionPlan": "2023-09-15"
+    },
+    {
+      "cod_materia": "009",
+      "NombreMateria": "Materia 9",
+      "Cod_carrera": "ING01",
+      "AñoDeCursada": "5°",
+      "CantidadDeAlumnosActual": 38,
+      "PdfPrograma": "materia9.pdf",
+      "FechaAprobacionPlan": "2024-01-15"
+    },
+    {
+      "cod_materia": "010",
+      "NombreMateria": "Materia 10",
+      "Cod_carrera": "DS01",
+      "AñoDeCursada": "1°",
+      "CantidadDeAlumnosActual": 40,
+      "PdfPrograma": "materia10.pdf",
+      "FechaAprobacionPlan": "2020-02-15"
+    },
+    {
+      "cod_materia": "011",
+      "NombreMateria": "Materia 11",
+      "Cod_carrera": "DS01",
+      "AñoDeCursada": "2°",
+      "CantidadDeAlumnosActual": 42,
+      "PdfPrograma": "materia11.pdf",
+      "FechaAprobacionPlan": "2021-03-15"
+    },
+    {
+      "cod_materia": "012",
+      "NombreMateria": "Materia 12",
+      "Cod_carrera": "DS01",
+      "AñoDeCursada": "3°",
+      "CantidadDeAlumnosActual": 44,
+      "PdfPrograma": "materia12.pdf",
+      "FechaAprobacionPlan": "2022-04-15"
+    },
+    {
+      "cod_materia": "013",
+      "NombreMateria": "Materia 13",
+      "Cod_carrera": "DS01",
+      "AñoDeCursada": "4°",
+      "CantidadDeAlumnosActual": 46,
+      "PdfPrograma": "materia13.pdf",
+      "FechaAprobacionPlan": "2023-05-15"
+    },
+    {
+      "cod_materia": "014",
+      "NombreMateria": "Materia 14",
+      "Cod_carrera": "EM01",
+      "AñoDeCursada": "5°",
+      "CantidadDeAlumnosActual": 48,
+      "PdfPrograma": "materia14.pdf",
+      "FechaAprobacionPlan": "2024-06-15"
+    },
+    {
+      "cod_materia": "015",
+      "NombreMateria": "Materia 15",
+      "Cod_carrera": "EM01",
+      "AñoDeCursada": "1°",
+      "CantidadDeAlumnosActual": 20,
+      "PdfPrograma": "materia15.pdf",
+      "FechaAprobacionPlan": "2020-07-15"
+    },
+    {
+      "cod_materia": "016",
+      "NombreMateria": "Materia 16",
+      "Cod_carrera": "EM01",
+      "AñoDeCursada": "2°",
+      "CantidadDeAlumnosActual": 22,
+      "PdfPrograma": "materia16.pdf",
+      "FechaAprobacionPlan": "2021-08-15"
+    },
+    {
+      "cod_materia": "017",
+      "NombreMateria": "Materia 17",
+      "Cod_carrera": "EM01",
+      "AñoDeCursada": "3°",
+      "CantidadDeAlumnosActual": 24,
+      "PdfPrograma": "materia17.pdf",
+      "FechaAprobacionPlan": "2022-09-15"
+    },
+    {
+      "cod_materia": "018",
+      "NombreMateria": "Materia 18",
+      "Cod_carrera": "SI01",
+      "AñoDeCursada": "4°",
+      "CantidadDeAlumnosActual": 26,
+      "PdfPrograma": "materia18.pdf",
+      "FechaAprobacionPlan": "2023-01-15"
+    },
+    {
+      "cod_materia": "019",
+      "NombreMateria": "Materia 19",
+      "Cod_carrera": "SI01",
+      "AñoDeCursada": "5°",
+      "CantidadDeAlumnosActual": 28,
+      "PdfPrograma": "materia19.pdf",
+      "FechaAprobacionPlan": "2024-02-15"
+    },
+    {
+      "cod_materia": "020",
+      "NombreMateria": "Materia 20",
+      "Cod_carrera": "SI01",
+      "AñoDeCursada": "1°",
+      "CantidadDeAlumnosActual": 30,
+      "PdfPrograma": "materia20.pdf",
+      "FechaAprobacionPlan": "2020-03-15"
     }
   ]
 }
