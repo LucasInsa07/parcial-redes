@@ -1,14 +1,76 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
-<title>esp20</title><link rel="stylesheet" href="style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="script-esp20.js" defer></script></head><body>
-<div id="contenedor" class="container contenedorActivo"><h1>esp20 – Tabla + Formulario Modal</h1>
-<div class="actions"><button id="btnCargar">Cargar</button><button id="btnVaciar">Vaciar</button><button id="btnFormulario">Formulario</button></div>
-<div class="card" style="overflow:auto;max-height:70vh;"><table><thead><tr><th>Op</th><th class="hidden-sm">DNI</th><th>Nombre</th><th>Nro Cuota</th><th>Importe</th><th>Medio</th><th class="hidden-sm">Comp</th></tr></thead><tbody id="tbDatos"></tbody></table></div></div>
-<div id="ventanaModal" class="ventanaModalApagado"><div class="modal-content"><span id="cerrarModal">&times;</span>
-<form id="formMovimiento"><div class="grid"><div><label>Op</label><input name="IdentificativoOperacion"></div>
-<div><label>DNI</label><input name="DNI_deudor"></div><div><label>Nombre</label><input name="NombreDeldeudor"></div>
-<div><label>Nro Cuota</label><input name="NroCuota"></div><div><label>Importe</label><input name="Importe"></div>
-<div><label>Medio</label><select id="selectMedio" name="cod_medio"></select></div>
-<div><label>Comprobante</label><input name="QR_comprobantePago"></div></div><div class="actions"><button type="submit">Guardar</button></div></form>
-</div></div></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>esp20</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script-esp20.js" defer></script>
+</head>
+<body>
+    <div id="contenedor" class="container contenedorActivo">
+        <h1>esp20 – Tabla + Formulario Modal</h1>
+        <div class="actions">
+            <button id="btnCargar">Cargar</button>
+            <button id="btnVaciar">Vaciar</button>
+            <button id="btnFormulario">Formulario</button>
+        </div>
+        <div class="card" style="overflow:auto;max-height:70vh;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Op</th>
+                        <th class="hidden-sm">DNI</th>
+                        <th>Nombre</th>
+                        <th>Nro Cuota</th>
+                        <th>Importe</th>
+                        <th>Medio</th>
+                        <th class="hidden-sm">Comp</th>
+                    </tr>
+                </thead>
+                <tbody id="tbDatos"></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="ventanaModal" class="ventanaModalApagado">
+        <div class="modal-content">
+            <span id="cerrarModal">&times;</span>
+            <form id="formMovimiento">
+                <div class="grid">
+                    <div>
+                        <label>Op</label>
+                        <input name="IdentificativoOperacion">
+                    </div>
+                    <div>
+                        <label>DNI</label>
+                        <input name="DNI_deudor">
+                    </div>
+                    <div>
+                        <label>Nombre</label>
+                        <input name="NombreDeldeudor">
+                    </div>
+                    <div>
+                        <label>Nro Cuota</label>
+                        <input name="NroCuota">
+                    </div>
+                    <div>
+                        <label>Importe</label>
+                        <input name="Importe">
+                    </div>
+                    <div>
+                        <label>Medio</label>
+                        <select id="selectMedio" name="cod_medio"></select>
+                    </div>
+                    <div>
+                        <label>Comprobante</label>
+                        <input name="QR_comprobantePago">
+                    </div>
+                </div>
+                <div class="actions">
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
