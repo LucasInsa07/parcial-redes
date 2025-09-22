@@ -1,10 +1,36 @@
 /* ===== Estilo general ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   background: #f4f4f4;
   color: #222;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Header y Footer ===== */
+.header {
+  background: #1976d2;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer {
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: auto;
 }
 
 h1, h2 {
@@ -17,6 +43,7 @@ h1, h2 {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
+  flex: 1;
 }
 
 .card {
@@ -134,8 +161,6 @@ input, select {
 }
 
 /* ===== Responsive: ocultar columnas chicas ===== */
-.hidden-sm {}
-
 @media (max-width: 650px) {
   .hidden-sm {
     display: none;
