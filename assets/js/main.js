@@ -1,1 +1,1 @@
-document.body.classList.add('ready');
+// JS global placeholder
