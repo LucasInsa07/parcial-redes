@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Desplegable</title>
+    <link href="../../assets/css/base.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .header-bar {
+            background-color: #1976d2;
+            color: #fff;
+            padding: 18px 0;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .main-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            max-width: 600px;
+            margin: 40px auto 0 auto;
+            padding: 32px 32px 24px 32px;
+            border: 1px solid #e0e0e0;
+        }
+        .menu {
+            display: flex;
+            background-color: #333;
+            padding: 0;
+            margin: 0 auto;
+            list-style: none;
+            width: fit-content;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .menu > li {
+            position: relative;
+        }
+        .menu > li > a {
+            display: block;
+            padding: 14px 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .menu > li > a:hover {
+            background-color: #1976d2;
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-radius: 0 0 8px 8px;
+            min-width: 160px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .submenu > li > a {
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            display: block;
+            font-weight: 400;
+        }
+        .submenu > li > a:hover {
+            background-color: #1976d2;
+        }
+        .menu > li:hover .submenu {
+            display: block;
+        }
+        .footer-bar {
+            background: #222d35;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0 12px 0;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            margin: 0;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">CSS2 - Ejercicio 3: Menú Desplegable</div>
+    <div class="main-card">
+        <ul class="menu">
+            <li><a>HTML</a>
+                <ul class="submenu">
+                    <li><a>Tablas</a></li>
+                    <li><a>Forms</a></li>
+                    <li><a>IFrame</a></li>
+                </ul>
+            </li>
+            <li><a>CSS</a>
+                <ul class="submenu">
+                    <li><a>Style en header</a></li>
+                    <li><a>Selector de clase</a></li>
+                    <li><a>Style en file</a></li>
+                </ul>
+            </li>
+            <li><a>JS</a>
+                <ul class="submenu">
+                    <li><a>js1</a></li>
+                    <li><a href="#">js2</a></li>
+                </ul>
+            </li>
+            <li><a>Especiales</a>
+                <ul class="submenu">
+                    <li><a>especial1</a></li>
+                    <li><a>especial2</a></li>
+                </ul>
+            </li>
+            <li><a>PHP</a>
+                <ul class="submenu">
+                    <li><a>php1</a></li>
+                    <li><a>php2</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-bar">© 2025 Programación en Ambiente de Redes</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML1 - Ejercicios Básicos</title>
+    <link href="../assets/css/base.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .header-bar {
+            background-color: #1976d2;
+            color: #fff;
+            padding: 18px 0 18px 0;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .main-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            max-width: 600px;
+            margin: 40px auto 0 auto;
+            padding: 32px 32px 24px 32px;
+            border: 1px solid #e0e0e0;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 24px;
+            font-weight: bold;
+        }
+        ul.exercise-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px 0;
+        }
+        ul.exercise-list li {
+            margin: 18px 0;
+            font-size: 1.1rem;
+        }
+        ul.exercise-list a {
+            color: #1976d2;
+            text-decoration: underline;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        ul.exercise-list a:hover {
+            color: #0d47a1;
+        }
+        .back-link {
+            display: block;
+            margin: 32px auto 0 auto;
+            width: fit-content;
+            background: #1976d2;
+            color: #fff !important;
+            padding: 12px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(25,118,210,0.08);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .back-link.square-btn {
+            border-radius: 0px !important;
+            padding: 12px 32px !important;
+        }
+        .back-link:hover {
+            background: #0d47a1;
+            transform: scale(1.04);
+        }
+        .footer-bar {
+            background: #222d35;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0 12px 0;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        .fixed-footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            margin: 0;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">HTML1 - Ejercicios Básicos</div>
+    <div class="main-card">
+        <h2>Índice de Ejercicios HTML1</h2>
+        <ul class="exercise-list">
+            <li><a href="ejercicio1.html">Ejercicio 1 </a></li>
+            <li><a href="ejercicio2.html">Ejercicio 2 </a></li>
+            <li><a href="ejercicio3.html">Ejercicio 3 </a></li>
+            <li><a href="ejercicio4.html">Ejercicio 4 </a></li>
+        </ul>
+        <a href="../index.html" class="back-link square-btn">← Volver al índice principal</a>
+    </div>
+    <div class="footer">© 2025 Programación en Ambiente de Redes</div>
+</body>
+</html>

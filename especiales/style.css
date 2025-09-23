@@ -1,0 +1,168 @@
+/* ===== Estilo general ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Header y Footer ===== */
+.header {
+  background: #1976d2;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer {
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+h1, h2 {
+  margin: 16px 0 8px;
+  text-align: center;
+}
+
+/* ===== Contenedor principal ===== */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0;   /* recto */
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+/* ===== Botones ===== */
+button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1565c0;
+}
+
+/* ===== Tablas ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background: #1976d2;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* ===== Formularios ===== */
+form label {
+  display: block;
+  margin: 8px 0 4px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 0; /* recto */
+  background: #fff;
+  color: #222;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Modal ===== */
+.ventanaModalPrendido {
+  visibility: visible;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ventanaModalApagado {
+  visibility: hidden;
+}
+
+.modal-content {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 400px;
+  border-radius: 0;
+  position: relative;
+}
+
+#cerrarModal, #cerrarModal15 {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #444;
+}
+
+/* ===== Estados de contenedor ===== */
+.contenedorActivo {
+  filter: none;
+}
+
+.contenedorPasivo {
+  filter: blur(2px) brightness(0.8);
+}
+
+/* ===== Responsive: ocultar columnas chicas ===== */
+@media (max-width: 650px) {
+  .hidden-sm {
+    display: none;
+  }
+}

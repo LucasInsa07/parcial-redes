@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Notas - Facultad</title>
+    <link href="../../assets/css/base.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .header-bar {
+            background-color: #1976d2;
+            color: #fff;
+            padding: 18px 0;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .main-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            max-width: 900px;
+            margin: 40px auto 0 auto;
+            padding: 32px 32px 24px 32px;
+            border: 1px solid #e0e0e0;
+        }
+        .table-container {
+            padding: 20px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background: #fff;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #1976d2;
+            color: white;
+        }
+        .footer-bar {
+            background: #222d35;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0 12px 0;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            margin: 0;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">CSS2 - Ejercicio 6: Tabla RWD</div>
+    <div class="main-card">
+        <h2>Tabla de Notas - Facultad</h2>
+        <div class="table-container">
+            <table id="notas">
+                <thead>
+                    <tr>
+                        <th>Materia</th>
+                        <th>Nota TP</th>
+                        <th>Nota Parcial</th>
+                        <th>Nota Final</th>
+                        <th>Asistencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Programación</td>
+                        <td>7</td>
+                        <td>10</td>
+                        <td>10</td>
+                        <td>75%</td>
+                    </tr>
+                    <tr>
+                        <td>Redes</td>
+                        <td>9</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>75%</td>
+                    </tr>
+                    <tr>
+                        <td>Proyecto SW</td>
+                        <td>10</td>
+                        <td>10</td>
+                        <td>10</td>
+                        <td>75%</td>
+                    </tr>
+                    <tr>
+                        <td>Bases de Datos</td>
+                        <td>8</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>75%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer-bar">© 2025 Programación en Ambiente de Redes</div>
+</body>
