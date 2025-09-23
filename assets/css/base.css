@@ -1,0 +1,9 @@
+
+:root { --bg:#0b0f19; --bg-elev:#111628; --text:#e6e9f0; --muted:#9aa4b2; --primary:#4ea1ff; --border:#20263a; }
+body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui; }
+.container { max-width:1100px; margin:0 auto; padding:24px; }
+.header{background:rgba(11,15,25,.8);border-bottom:1px solid var(--border);position:sticky;top:0;}
+.nav{display:flex;gap:12px;flex-wrap:wrap;padding:12px 0;}
+.nav a{padding:8px 14px;border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--text);}
+.card{border:1px solid var(--border);border-radius:14px;padding:18px;margin:16px 0;}
+.footer{text-align:center;padding:12px;border-top:1px solid var(--border);color:var(--muted);margin-top:24px;}

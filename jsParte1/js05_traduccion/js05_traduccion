@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio JS Parte 2</title>
+</head>
+<body>
+  <div id="presentacion"></div>
+
+  <script>
+    // Diccionario de traducciones
+    let mensajes = {
+      "es": "Me gusta mucho la materia Redes.",
+      "en": "I really like the subject Networks.",
+      "fr": "J'aime beaucoup la matière Réseaux.",
+      "pt": "Eu gosto muito da matéria Redes.",
+      "de": "Ich mag das Fach Netzwerke sehr."
+    };
+
+    // Obtener lenguajes del navegador (array)
+    let lenguajes = window.navigator.languages;
+
+    // Tomo el primero como default
+    let idioma = lenguajes[0].substr(0,2);  
+
+    // Armo el texto dinámicamente
+    let texto = "<h1>" + (mensajes[idioma] || mensajes["es"]) + "</h1>";
+
+    // Escribo en el div usando innerHTML
+    document.getElementById("presentacion").innerHTML = texto;
+  </script>
+</body>
+</html>

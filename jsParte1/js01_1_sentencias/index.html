@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo con document.write()</title>
+</head>
+<body>
+  <h2>Texto1 escrito directamente en HTML</h2>
+  <script>
+    alert("Alert 3. Este mensaje de alerta es escrito desde un s cript del documento. Esta ventana de alerta es modal, lo que significa que el flujo de escritura del documento se interrumpe hasta el evento de aceptacion. El navegador muesta estas ventanas con anterioridad a la interpretacion o renderizacion del documento");
+
+    document.write("<h2>Texto2. Mensaje escrito desde java script utilizando el metodo write().</h2>");
+    document.write("<h3>No pisa al documento porque aun no termino el flujo de escritura del navegador</h3>");
+
+    alert("Alert6. Escrito al final de todo el codigo");
+
+    document.write("<h2>Texto 4 escrito en HTML escrito despues de presentar el alert('3')</h2>");
+    
+
+    document.write("<h2>Texto5. Otra escritura con metodo write() aplicado al documento.</h2>");
+    document.write("<h3>El texto escrito con write no pisa al documento porque aun no termino el flujo de escritura del navegador</h3>");
+
+    document.write("El flujo de escritura sobre el navegador termina un tiempo determinado despues de la lectura de la ultima linea del documento y de haber cerrado todas las ventanas modales de tipo alert().");
+
+  </script>
+</body>
+</html>

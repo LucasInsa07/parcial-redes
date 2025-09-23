@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>css21DivsInternosAbsolutos</title>
+  <style>
+        html,body {
+            background-color: rgb(204, 204, 204);
+        }
+        .contenedorAbosoluto1 {
+          position:absolute; left:5%; right:5%; height:1000px; background:#add8e6;
+        }
+        .contenedorAbsoluto2{
+          position:absolute; left:10%; top:20%; width:400px; height:600px; background:green;
+        }
+        .contenedorAbsoluto3{
+          position:absolute; left:30%; right:30%; top:50%; width:500px; height:600px; background:rgb(52, 56, 59); opacity: 70%;
+        }
+        .contenedorAbsoluto4{
+          position:absolute; left:60%; right:5%; top:65%; transform:rotate(20deg); background:#b96017; padding:12px; height:500px;
+        }
+        .contenedorAbsolutaoFotos{
+          display:flex; gap:10px;
+        }
+        .fotos{
+          width:24%; height:220px; object-fit:cover; display:block;
+        }
+    </style>
+</head>
+
+<body>
+  <h1>css21DivsInternosAbsolutos</h1>
+  <p>Contenido del ejercicio css21DivsInternosAbsolutos:</p>
+  <div class="contenedorAbosoluto1">
+    <h1>Esctructora de posicionamiento absoluto pero adaptable al medio de representacion</h1>
+    <div class="contenedorAbsoluto2">
+      <h1>Contenerdor interno 1</h1>
+      <label>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit aperiam omnis voluptatem, doloribus quo ipsam, reiciendis commodi exercitationem minus corporis rerum ducimus aut adipisci possimus consectetur? Necessitatibus dolor sed quas?-
+      </label>
+    </div>
+    <div class="contenedorAbsoluto4">
+      <h1>Contenedor interno 2
+      </h1>
+      <div class="contenedorAbsolutaoFotos">
+        <img src="../css21DivsInternosAbsolutos/IMG_1869.JPEG" class="fotos">
+        <img src="../css21DivsInternosAbsolutos/IMG_1869.JPEG" class="fotos">
+        <img src="../css21DivsInternosAbsolutos/IMG_1869.JPEG" class="fotos">
+        <img src="../css21DivsInternosAbsolutos/IMG_1869.JPEG" class="fotos">
+      </div>
+    </div>
+    <div class="contenedorAbsoluto3">
+      <h1>Contenedor interno 3</h1>
+      <label>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit aperiam omnis voluptatem, doloribus quo ipsam, reiciendis commodi exercitationem minus corporis rerum ducimus aut adipisci possimus consectetur? Necessitatibus dolor sed quas?-
+      </label>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
