@@ -1,37 +1,31 @@
 <?php
-if (isset($_POST["varDeEntrada"])) {
-    $varDeEntrada = $_POST["varDeEntrada"];
-    $claveEncriptada = hash('sha256', $varDeEntrada); 
-    $claveEncriptadamd5 = md5($varDeEntrada);
+if (isset($_POST['clave'])) {
+    $clave = $_POST['clave'];
 
-    echo "<h2>Datos Procesados</h2>";
-    echo "Valor recibido: " . htmlspecialchars($varDeEntrada) . "<br>";
-    echo "<h2>Clave encriptada (SHA256):</h2> " . $claveEncriptada . "<p> 256 bits o 32 octetos o 32 pares hexadecimales </p> <br>";
-    echo "<h2>Clave encriptada (MD5):</h2> " . $claveEncriptadamd5 . "<p> 128 bits o 16 octetos o 16 pares hexadecimales </p> <br>";
+    $md5 = md5($clave);
+    $sha = sha1($clave);
 
-    $objDatos = new stdClass();
-    $objDatos->entrada = $varDeEntrada;
-    $objDatos->encriptada = $claveEncriptada;
-    $objDatos->encriptada = $claveEncriptadamd5;
-
-    echo "<button class='volver-atras'><a class='volver-atras' href='./index.php'>Volver atras</a></button>";
+    echo "<h2>Resultados de la encriptación</h2>";
+    echo "<p><strong>Clave original:</strong> $clave</p>";
+    echo "<p><strong>MD5 (128 bits = 16 pares hex):</strong> $md5</p>";
+    echo "<p><strong>SHA-1 (160 bits = 20 pares hex):</strong> $sha</p>";
+    echo "<br><a href=''>Volver</a>";
 } else {
+    // primera carga: mostrar el formulario
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <title>Formulario</title>
-    <link rel="stylesheet" href="../../styles.css">
+  <meta charset="UTF-8">
+  <title>Form to Encrypt</title>
 </head>
 <body>
-    <h1>Envío de Formulario</h1>
-    <form method="post" action="">
-        <label>Ingrese un valor:</label>
-        <input type="text" name="varDeEntrada" required>
-        <button class="submit" type="submit">Enviar</button>
-    </form>
-    <button class="volver-atras">
-        <a class="volver-atras" href="../index.php">Volver atras</a>
-    </button>
+  <h2>Encriptar una clave</h2>
+  <form method="post" action="">
+    <label>Ingrese clave:</label>
+    <input type="text" name="clave" required>
+    <button type="submit">Obtener encriptación</button>
+  </form>
 </body>
 </html>
 <?php
