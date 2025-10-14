@@ -1,0 +1,9 @@
+# Allow access to this directory (compatible with Apache 2.2 and 2.4)
+DirectoryIndex index.php index.html
+<IfModule mod_authz_core.c>
+  Require all granted
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Allow from all
+</IfModule>
