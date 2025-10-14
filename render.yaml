@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: php-exercises
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: ""
+    startCommand: ""
+    envVars:
+      - key: APACHE_DOCUMENT_ROOT
+        value: /var/www/html
+    healthCheckPath: /index.html
+    autoDeploy: true
