@@ -38,7 +38,7 @@ natcasesort($entries);
         <?php $path = $dir . DIRECTORY_SEPARATOR . $entry; ?>
         <li>
           <?php if (is_dir($path)): ?>
-            <a href="<?php echo rawurlencode($entry); ?>/"><?php echo htmlspecialchars($entry); ?>/</a>
+            <a href="<?php echo rawurlencode($entry); ?>/index.php"><?php echo htmlspecialchars($entry); ?>/</a>
             <small class="meta">(carpeta)</small>
           <?php else: ?>
             <a href="<?php echo rawurlencode($entry); ?>"><?php echo htmlspecialchars($entry); ?></a>
