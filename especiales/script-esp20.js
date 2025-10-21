@@ -1,45 +1,95 @@
+
 let medios = [];
 let movimientos = [];
 
+
 function render() {
-    $("#tbDatos").empty();
-    movimientos.forEach(m => {
-        const medio = medios.find(x => x.cod_medio === m.cod_medio)?.descripcion || "";
-        $("#tbDatos").append(`<tr><td>${m.IdentificativoOperacion}</td><td class="hidden-sm">${m.DNI_deudor}</td><td>${m.NombreDeldeudor}</td><td>${m.NroCuota}</td><td>${Number(m.Importe).toFixed(2)}</td><td>${medio}</td><td class="hidden-sm">${m.QR_comprobantePago}</td></tr>`);
-    });
+  const tbody = document.getElementById("tbDatos");
+  tbody.innerHTML = ""; // limpia la tabla
+
+  movimientos.forEach(m => {
+    const medio = medios.find(x => x.cod_medio === m.cod_medio)?.descripcion || "";
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+      <td>${m.IdentificativoOperacion}</td>
+      <td class="hidden-sm">${m.DNI_deudor}</td>
+      <td>${m.NombreDeldeudor}</td>
+      <td>${m.NroCuota}</td>
+      <td>${Number(m.Importe).toFixed(2)}</td>
+      <td>${medio}</td>
+      <td class="hidden-sm">${m.QR_comprobantePago}</td>
+    `;
+
+    tbody.appendChild(row);
+  });
 }
 
-$(function() {
-    $.getJSON("medios-pagos.json", d => {
-        medios = d.MediosDePago;
-        $("#selectMedio").empty();
-        medios.forEach(m => $("#selectMedio").append(`<option value="${m.cod_medio}">${m.descripcion}</option>`));
+
+async function cargarJSON(url) {
+  const respuesta = await fetch(url);
+  if (!respuesta.ok) throw new Error("Error al cargar " + url);
+  return await respuesta.json();
+}
+
+
+window.addEventListener("DOMContentLoaded", async () => {
+
+
+  try {
+    const dataMedios = await cargarJSON("medios-pagos.json");
+    medios = dataMedios.MediosDePago;
+
+    const selectMedio = document.getElementById("selectMedio");
+    selectMedio.innerHTML = "";
+
+    medios.forEach(m => {
+      const option = document.createElement("option");
+      option.value = m.cod_medio;
+      option.textContent = m.descripcion;
+      selectMedio.appendChild(option);
     });
-    
-    $("#btnCargar").click(() => {
-        $.getJSON("movimientos-pagos.json", d => {
-            movimientos = d.MovimientosPago;
-            render();
-        });
-    });
-    
-    $("#btnVaciar").click(() => $("#tbDatos").empty());
-    
-    $("#btnFormulario").click(() => {
-        $("#contenedor").attr("class", "container contenedorPasivo");
-        $("#ventanaModal").attr("class", "ventanaModalPrendido");
-    });
-    
-    $("#cerrarModal").click(() => {
-        $("#contenedor").attr("class", "container contenedorActivo");
-        $("#ventanaModal").attr("class", "ventanaModalApagado");
-    });
-    
-    $("#formMovimiento").submit(function(e) {
-        e.preventDefault();
-        const nuevo = Object.fromEntries(new FormData(this).entries());
-        movimientos.push(nuevo);
-        $("#cerrarModal").click();
-        render();
-    });
+  } catch (err) {
+    console.error("Error cargando medios:", err);
+  }
+
+
+  document.getElementById("btnCargar").addEventListener("click", async () => {
+    try {
+      const dataMovs = await cargarJSON("movimientos-pagos.json");
+      movimientos = dataMovs.MovimientosPago;
+      render();
+    } catch (err) {
+      console.error("Error cargando movimientos:", err);
+    }
+  });
+
+
+  document.getElementById("btnVaciar").addEventListener("click", () => {
+    document.getElementById("tbDatos").innerHTML = "";
+  });
+
+
+  document.getElementById("btnFormulario").addEventListener("click", () => {
+    document.getElementById("contenedor").className = "container contenedorPasivo";
+    document.getElementById("ventanaModal").className = "ventanaModalPrendido";
+  });
+
+  // 5️⃣ Botón cerrar modal
+  document.getElementById("cerrarModal").addEventListener("click", () => {
+    document.getElementById("contenedor").className = "container contenedorActivo";
+    document.getElementById("ventanaModal").className = "ventanaModalApagado";
+  });
+
+  // 6️⃣ Envío del formulario (guardar nuevo registro)
+  document.getElementById("formMovimiento").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const nuevo = Object.fromEntries(formData.entries());
+
+    movimientos.push(nuevo); // lo agregamos al array
+    document.getElementById("cerrarModal").click(); // cerramos modal
+    render(); // actualizamos tabla
+  });
 });
