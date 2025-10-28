@@ -1,5 +1,4 @@
-/* ---------- ESTILO GENERAL ---------- */
-
+/* === RESET GENERAL === */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,15 +6,15 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* === ESTRUCTURA GENERAL === */
 html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden; /* sin scroll externo */
-  background-color: #f5f5f5;
+  overflow: hidden;
+  background-color: #f5f1ce; /* fondo amarillento */
 }
 
-/* ---------- CONTENEDORES PRINCIPALES ---------- */
-
+/* === CONTENEDOR PRINCIPAL === */
 .container {
   display: flex;
   flex-direction: column;
@@ -25,216 +24,156 @@ html, body {
 .contenedorActivo {
   opacity: 1;
   pointer-events: auto;
-  transition: opacity 0.3s ease;
 }
 
 .contenedorPasivo {
   opacity: 0.3;
   pointer-events: none;
-  transition: opacity 0.3s ease;
 }
 
-/* ---------- HEADER Y FOOTER ---------- */
-
-.header {
-  background: #0066cc;
-  color: #fff;
+/* === ENCABEZADO === */
+header {
+  background-color: #f5f1ce;
   text-align: center;
-  padding: 12px 0;
+  padding: 8px;
   flex: 0 0 auto;
 }
 
-.header h1 {
+header h1 {
+  color: #000;
   font-size: 22px;
-  letter-spacing: 0.5px;
+  margin-bottom: 6px;
 }
 
-.acciones {
-  margin-top: 10px;
+header .acciones {
+  margin-top: 6px;
 }
 
-.acciones button {
-  background: #fff;
-  color: #0066cc;
-  border: none;
-  margin: 4px;
-  padding: 8px 14px;
-  border-radius: 6px;
+header button {
+  background-color: #c0c0c0;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 0 4px;
   cursor: pointer;
   font-weight: bold;
+  color: #000;
 }
 
-.acciones button:hover {
-  background: #cce0ff;
+header button:hover {
+  background-color: #b5b5b5;
 }
 
-.footer {
-  background: #0066cc;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  flex: 0 0 auto;
-  font-size: 14px;
-}
-
-/* ---------- TABLA PRINCIPAL ---------- */
-
+/* === TABLA === */
 .tablaPrincipal {
   flex: 1 1 auto;
   overflow-y: auto;
-  background: white;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  background-color: #bcdff9; /* celeste */
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
 }
 
 thead {
-  background-color: #e9f0fb;
-  position: sticky;
-  top: 0;
-  z-index: 2;
+  background-color: #e76f51; /* rojo */
+  color: #000;
+  font-weight: bold;
 }
 
 th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
+  border: 1px solid #000;
   text-align: center;
+  padding: 6px;
+  font-size: 14px;
 }
 
-tr:nth-child(even) {
-  background: #f9f9f9;
-}
-
-tr:hover {
-  background-color: #eef6ff;
+tbody tr:nth-child(even) {
+  background-color: #cce5fa;
 }
 
 .hidden-sm {
   display: table-cell;
 }
 
-.qr {
-  width: 60px;
-  height: 60px;
-  border-radius: 4px;
+/* === PIE === */
+footer {
+  background-color: #e76f51;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  padding: 4px 0;
+  flex: 0 0 auto;
 }
 
-/* ---------- MODAL ---------- */
-
+/* === MODAL === */
 .ventanaModalApagado {
   visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 .ventanaModalPrendido {
   visibility: visible;
-  opacity: 1;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 10;
+  align-items: center;
 }
 
-/* ---------- CONTENIDO DEL MODAL ---------- */
-
+/* === CONTENIDO DEL MODAL === */
 .modal-content {
-  background: #fff;
+  background-color: #fff;
   padding: 20px;
-  border-radius: 10px;
-  width: 350px;
-  max-width: 90%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  display: flex;
-  flex-direction: column;
+  border: 2px solid #000;
+  border-radius: 6px;
+  width: 300px;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
 }
 
 .modal-header h2 {
-  color: #0066cc;
+  color: #000;
   font-size: 18px;
 }
 
 #cerrarModal {
-  background: #ff5555;
-  border: none;
-  color: #fff;
+  background-color: #c0c0c0;
+  border: 1px solid #555;
+  border-radius: 4px;
   width: 28px;
   height: 28px;
-  border-radius: 50%;
   cursor: pointer;
   font-weight: bold;
 }
 
-#cerrarModal:hover {
-  background: #ff2e2e;
-}
-
-/* ---------- FORMULARIO ---------- */
-
 form {
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
   gap: 8px;
 }
 
 form input,
 form select {
-  padding: 6px 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #000;
+  padding: 4px;
+  font-size: 13px;
+}
+
+form button {
+  background-color: #c0c0c0;
+  border: 1px solid #555;
   border-radius: 4px;
-  font-size: 14px;
-}
-
-form button[type="submit"] {
-  background: #0066cc;
-  color: #fff;
-  border: none;
-  padding: 8px;
-  border-radius: 6px;
-  margin-top: 10px;
-  cursor: pointer;
+  padding: 6px;
   font-weight: bold;
-}
-
-form button[type="submit"]:hover {
-  background: #004c99;
-}
-
-/* ---------- RESPONSIVE ---------- */
-
-@media (max-width: 700px) {
-  .hidden-sm {
-    display: none;
-  }
-
-  .header h1 {
-    font-size: 18px;
-  }
-
-  table {
-    font-size: 12px;
-  }
-
-  .qr {
-    width: 45px;
-    height: 45px;
-  }
+  cursor: pointer;
 }
