@@ -1,95 +1,100 @@
-
 let medios = [];
 let movimientos = [];
 
-
 function render() {
   const tbody = document.getElementById("tbDatos");
-  tbody.innerHTML = ""; // limpia la tabla
+  tbody.innerHTML = "";
 
   movimientos.forEach(m => {
     const medio = medios.find(x => x.cod_medio === m.cod_medio)?.descripcion || "";
-    const row = document.createElement("tr");
+    const fila = document.createElement("tr");
 
-    row.innerHTML = `
+    fila.innerHTML = `
       <td>${m.IdentificativoOperacion}</td>
       <td class="hidden-sm">${m.DNI_deudor}</td>
       <td>${m.NombreDeldeudor}</td>
       <td>${m.NroCuota}</td>
-      <td>${Number(m.Importe).toFixed(2)}</td>
+      <td>$ ${Number(m.Importe).toFixed(2)}</td>
       <td>${medio}</td>
-      <td class="hidden-sm">${m.QR_comprobantePago}</td>
+      <td class="hidden-sm">
+        <img src="./img/${m.QR_comprobantePago}" alt="QR" class="qr" />
+      </td>
     `;
 
-    tbody.appendChild(row);
+    tbody.appendChild(fila);
   });
 }
 
+// ----------------------------------------------------
+// Carga los datos desde las variables globales
+// ----------------------------------------------------
+function cargarDatos() {
 
-async function cargarJSON(url) {
-  const respuesta = await fetch(url);
-  if (!respuesta.ok) throw new Error("Error al cargar " + url);
-  return await respuesta.json();
+  medios = MediosDePago.MediosDePago;
+  movimientos = MovimientosPago.MovimientosPago;
+
+  render();
 }
 
+// ----------------------------------------------------
+// Vacía la tabla de datos
+// ----------------------------------------------------
+function vaciarDatos() {
+  const tbody = document.getElementById("tbDatos");
+  tbody.innerHTML = "";
+}
 
-window.addEventListener("DOMContentLoaded", async () => {
+// ----------------------------------------------------
+// Abre la ventana modal (formulario)
+// ----------------------------------------------------
+function abrirFormulario() {
+  document.getElementById("contenedor").className = "container contenedorPasivo";
+  document.getElementById("ventanaModal").className = "ventanaModalPrendido";
+}
 
+// ----------------------------------------------------
+// Cierra la ventana modal
+// ----------------------------------------------------
+function cerrarFormulario() {
+  document.getElementById("contenedor").className = "container contenedorActivo";
+  document.getElementById("ventanaModal").className = "ventanaModalApagado";
+}
 
-  try {
-    const dataMedios = await cargarJSON("medios-pagos.json");
-    medios = dataMedios.MediosDePago;
+// ----------------------------------------------------
+// Agrega un nuevo movimiento desde el formulario
+// ----------------------------------------------------
+function guardarMovimiento(e) {
+  e.preventDefault();
 
-    const selectMedio = document.getElementById("selectMedio");
-    selectMedio.innerHTML = "";
+  const form = e.target;
+  const nuevo = {
+    IdentificativoOperacion: form.idOperacion.value,
+    DNI_deudor: form.dni.value,
+    NombreDeldeudor: form.nombre.value,
+    NroCuota: form.cuota.value,
+    Importe: parseFloat(form.importe.value) || 0,
+    cod_medio: form.cod_medio.value,
+    QR_comprobantePago: form.qr.value
+  };
 
-    medios.forEach(m => {
-      const option = document.createElement("option");
-      option.value = m.cod_medio;
-      option.textContent = m.descripcion;
-      selectMedio.appendChild(option);
-    });
-  } catch (err) {
-    console.error("Error cargando medios:", err);
-  }
+  movimientos.push(nuevo);
+  cerrarFormulario();
+  render();
+}
 
+// ----------------------------------------------------
+// Inicialización de eventos
+// ----------------------------------------------------
+window.addEventListener("DOMContentLoaded", () => {
+  alert("Ejercicio ESP20 - Programación en Ambiente de Redes");
 
-  document.getElementById("btnCargar").addEventListener("click", async () => {
-    try {
-      const dataMovs = await cargarJSON("movimientos-pagos.json");
-      movimientos = dataMovs.MovimientosPago;
-      render();
-    } catch (err) {
-      console.error("Error cargando movimientos:", err);
-    }
-  });
+  // eventos de los botones
+  document.getElementById("btnCargar").addEventListener("click", cargarDatos);
+  document.getElementById("btnVaciar").addEventListener("click", vaciarDatos);
+  document.getElementById("btnFormulario").addEventListener("click", abrirFormulario);
+  document.getElementById("cerrarModal").addEventListener("click", cerrarFormulario);
 
-
-  document.getElementById("btnVaciar").addEventListener("click", () => {
-    document.getElementById("tbDatos").innerHTML = "";
-  });
-
-
-  document.getElementById("btnFormulario").addEventListener("click", () => {
-    document.getElementById("contenedor").className = "container contenedorPasivo";
-    document.getElementById("ventanaModal").className = "ventanaModalPrendido";
-  });
-
-  // 5️⃣ Botón cerrar modal
-  document.getElementById("cerrarModal").addEventListener("click", () => {
-    document.getElementById("contenedor").className = "container contenedorActivo";
-    document.getElementById("ventanaModal").className = "ventanaModalApagado";
-  });
-
-  // 6️⃣ Envío del formulario (guardar nuevo registro)
-  document.getElementById("formMovimiento").addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-    const nuevo = Object.fromEntries(formData.entries());
-
-    movimientos.push(nuevo); // lo agregamos al array
-    document.getElementById("cerrarModal").click(); // cerramos modal
-    render(); // actualizamos tabla
-  });
+  // envío del form
+  const form = document.getElementById("formMovimiento");
+  if (form) form.addEventListener("submit", guardarMovimiento);
 });
