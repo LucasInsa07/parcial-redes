@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP20 - Tabla + Formulario Modal</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div id="contenedor" class="container contenedorActivo">
+
+    <!-- Encabezado -->
+    <header class="header">
+      <h1>Movimientos de Pago</h1>
+      <div class="acciones">
+        <button id="btnCargar">Cargar Datos</button>
+        <button id="btnVaciar">Vaciar Datos</button>
+        <button id="btnFormulario">Cargar Formulario</button>
+      </div>
+    </header>
+
+    <!-- Tabla principal -->
+    <main class="tablaPrincipal">
+      <table class="tabla">
+        <thead>
+          <tr>
+            <th>Operación</th>
+            <th class="hidden-sm">DNI</th>
+            <th>Nombre</th>
+            <th>Cuota</th>
+            <th>Importe</th>
+            <th>Medio</th>
+            <th class="hidden-sm">Comprobante</th>
+          </tr>
+        </thead>
+        <tbody id="tbDatos">
+          <!-- Filas generadas dinámicamente por JS -->
+        </tbody>
+      </table>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+      <p>&copy; 2025 - Programación en Ambiente de Redes</p>
+    </footer>
+  </div>
+
+  <!-- Ventana modal (formulario) -->
+  <div id="ventanaModal" class="ventanaModalApagado">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Nuevo Movimiento</h2>
+        <button id="cerrarModal" title="Cerrar">X</button>
+      </div>
+
+      <form id="formMovimiento">
+        <input name="idOperacion" type="text" placeholder="Identificativo de Operación" required />
+        <input name="dni" type="text" placeholder="DNI del Deudor" required />
+        <input name="nombre" type="text" placeholder="Nombre del Deudor" required />
+        <input name="cuota" type="number" placeholder="N° de Cuota" required />
+        <input name="importe" type="number" placeholder="Importe" required />
+        
+        <select name="cod_medio" required>
+          <option value="">Seleccione un Medio</option>
+          <option value="01">Débito</option>
+          <option value="02">Crédito</option>
+          <option value="03">Efectivo</option>
+          <option value="04">QR</option>
+          <option value="05">Transferencia</option>
+        </select>
+
+        <input name="qr" type="text" placeholder="Archivo QR (ej: comp_0016.png)" />
+
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Vinculación de scripts -->
+  <script src="./medios-pagos.js"></script>
+  <script src="./movimientos-pagos.js"></script>
+  <script src="./esp20.js"></script>
+</body>
+</html>
