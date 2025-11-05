@@ -1,6 +1,12 @@
 <?php
 include("libreria.inc");
 
+// Validar que los campos no estén vacíos
+if (empty($_POST['login']) || empty($_POST['clave'])) {
+    header('Location: ./formulario_login.html');
+    exit();
+}
+
 $login = $_POST['login'];
 $clave = $_POST['clave'];
 
@@ -12,9 +18,8 @@ if (!$usuario) {
 }
 
 session_start();
-
 $_SESSION['idSesion'] = session_create_id();
-$_SESSION['login'] = $usuario['login'];
+$_SESSION['login'] = $usuario['loginDelUsuario'];
 $_SESSION['contador'] = $usuario['contador'];
 
 echo "<h2>Sesión iniciada correctamente</h2>";

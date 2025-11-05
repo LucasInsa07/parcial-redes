@@ -22,6 +22,11 @@ $("#btCargar").addEventListener("click", cargarDatos);
 $("#btVaciar").addEventListener("click", vaciarTabla);
 $("#btAlta").addEventListener("click", abrirAlta);
 
+// Ordenamiento y Filtros
+$("#ordenSelect").addEventListener("change", cargarDatosConFiltros);
+$("#btLimpiarFiltros").addEventListener("click", limpiarFiltros);
+$("#btAplicarFiltros").addEventListener("click", cargarDatosConFiltros);
+
 $("#a_cancel").addEventListener("click", ()=> cerrarModal(modalAlta));
 $("#m_cancel").addEventListener("click", ()=> cerrarModal(modalModi));
 
@@ -57,6 +62,53 @@ async function cargarDatos(){
     tbody.innerHTML = `<tr><td colspan="8" style="color:#b71c1c">Error cargando datos</td></tr>`;
     setEstado("Error en fetch traeMovimientos.php", false);
   }
+}
+
+async function cargarDatosConFiltros(){
+  const ordenSeleccionado = $("#ordenSelect").value;
+  const filtroID = $("#filtroID").value.trim();
+  const filtroDNI = $("#filtroDNI").value.trim();
+  const filtroNombre = $("#filtroNombre").value.trim();
+  const filtroCuota = $("#filtroCuota").value.trim();
+  const filtroImporte = $("#filtroImporte").value.trim();
+
+  tbody.innerHTML = `<tr><td colspan="8">Cargando...</td></tr>`;
+  
+  try{
+    // Construir URL con parámetros
+    const params = new URLSearchParams();
+    if (ordenSeleccionado) params.append('orden', ordenSeleccionado);
+    if (filtroID) params.append('filtroID', filtroID);
+    if (filtroDNI) params.append('filtroDNI', filtroDNI);
+    if (filtroNombre) params.append('filtroNombre', filtroNombre);
+    if (filtroCuota) params.append('filtroCuota', filtroCuota);
+    if (filtroImporte) params.append('filtroImporte', filtroImporte);
+
+    const url = `./traeMovimientos.php${params.toString() ? '?' + params.toString() : ''}`;
+    const r = await fetch(url);
+    const data = await r.json();
+    renderTabla(data.movimientos || []);
+    total.textContent = "Total: " + (data.cuenta ?? 0);
+    
+    const filtrosAplicados = [filtroID, filtroDNI, filtroNombre, filtroCuota, filtroImporte].some(f => f);
+    setEstado("Datos cargados correctamente" + 
+             (ordenSeleccionado ? " (ordenados)" : "") + 
+             (filtrosAplicados ? " (filtrados)" : ""));
+  }catch(e){
+    tbody.innerHTML = `<tr><td colspan="8" style="color:#b71c1c">Error cargando datos</td></tr>`;
+    setEstado("Error en fetch traeMovimientos.php", false);
+  }
+}
+
+function limpiarFiltros(){
+  $("#ordenSelect").value = "";
+  $("#filtroID").value = "";
+  $("#filtroDNI").value = "";
+  $("#filtroNombre").value = "";
+  $("#filtroCuota").value = "";
+  $("#filtroImporte").value = "";
+  cargarDatos();
+  setEstado("Filtros limpiados");
 }
 
 function renderTabla(rows){
@@ -146,7 +198,7 @@ async function alta(){
     const txt = await r.text();
     a_estado.textContent = txt;
     a_estado.style.color = "#1b5e20";
-    await cargarDatos();
+    await cargarDatosConFiltros();
   }catch(e){
     a_estado.textContent = "Error en alta";
     a_estado.style.color = "#b71c1c";
@@ -173,7 +225,7 @@ async function modi(){
     const txt = await r.text();
     m_estado.textContent = txt;
     m_estado.style.color = "#1b5e20";
-    await cargarDatos();
+    await cargarDatosConFiltros();
   }catch(e){
     m_estado.textContent = "Error en modificación";
     m_estado.style.color = "#b71c1c";
@@ -188,7 +240,7 @@ async function baja(id){
     const r = await fetch("./baja.php", { method:"POST", body: fd });
     const txt = await r.text();
     setEstado(txt);
-    await cargarDatos();
+    await cargarDatosConFiltros();
   }catch(e){
     setEstado("Error en baja", false);
   }

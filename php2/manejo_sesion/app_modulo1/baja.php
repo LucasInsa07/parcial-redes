@@ -1,6 +1,6 @@
 <?php
 include("../manejoSesion.inc");
-include("../datosConexionBase.php");
+include("../conexion-db.php");
 
 header('Content-Type: text/plain; charset=utf-8');
 

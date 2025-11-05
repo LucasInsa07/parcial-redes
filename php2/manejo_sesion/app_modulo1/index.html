@@ -13,6 +13,32 @@
     <button id="btCargar">Cargar datos</button>
     <button class="vaciar" id="btVaciar">Vaciar tabla</button>
     <button id="btAlta">Alta registro</button>
+    <button id="btLimpiarFiltros">Limpiar Filtros</button>
+    <label>Orden: 
+      <select id="ordenSelect">
+        <option value="IdentificativoOperacion_ASC">ID Operación (A-Z)</option>
+        <option value="IdentificativoOperacion_DESC">ID Operación (Z-A)</option>
+        <option value="DNI_deudor_ASC">DNI (Menor-Mayor)</option>
+        <option value="DNI_deudor_DESC">DNI (Mayor-Menor)</option>
+        <option value="NombreDeldeudor_ASC">Deudor (A-Z)</option>
+        <option value="NombreDeldeudor_DESC">Deudor (Z-A)</option>
+        <option value="NroCuota_ASC">Cuota (Menor-Mayor)</option>
+        <option value="NroCuota_DESC">Cuota (Mayor-Menor)</option>
+        <option value="Importe_ASC">Importe (Menor-Mayor)</option>
+        <option value="Importe_DESC">Importe (Mayor-Menor)</option>
+      </select>
+    </label>
+    
+    <!-- Filtros de búsqueda -->
+    <div class="filtros-busqueda">
+      <label>Buscar ID: <input type="text" id="filtroID" placeholder="Ej: 1234"></label>
+      <label>Buscar DNI: <input type="text" id="filtroDNI" placeholder="Ej: 12345678"></label>
+      <label>Buscar Nombre: <input type="text" id="filtroNombre" placeholder="Ej: Juan"></label>
+      <label>Buscar Cuota: <input type="text" id="filtroCuota" placeholder="Ej: 1"></label>
+      <label>Importe mín: <input type="number" id="filtroImporte" placeholder="Ej: 1000" step="0.01"></label>
+    </div>
+    
+    <button id="btAplicarFiltros">Aplicar Filtros</button>
     <button class="neutro" id="btCerrarSesion" onclick="location.href='../destruirSesion.php'">Cerrar sesión</button>
   </section>
 
